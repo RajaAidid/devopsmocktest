@@ -5,6 +5,8 @@ metadata:
   namespace: qq3
 spec:
   volumeName: pv
+  accessModes:
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
@@ -15,13 +17,13 @@ metadata:
   name: pv
   namespace: qq3
 spec:
-  storageClass: gp2
+  storageClassName: gp2
   capacity:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
   hostPath:
     path: /mnt/data
-  claimRef: 
+  claimRef:
     name: pvc
     namespace: qq3
